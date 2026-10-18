@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <img src="{{url_for('static', filename='images/manbird.png')}}" alt="not a bird"></img> <br>
+    <p>contrary to the untrained eye, the photo above is NOT of a real bird.</p>
+    <img src="{{url_for('static', filename='images/pterosaur.jpg')}}" alt="also not a bird"></img> <br>
+    <p>believe it or not, Pterodactyls and that family of pre-historic animals (Pterosaurs) are not any closer related to birds than any other reptiles from the era. Although they did make popular pets during the great depression.</p>
+    <img src="{{url_for('static', filename='images/dogbird.jpg')}}" alt="imagine a dogbird..."></img> <br>
+    <p>I wish this bird were real, imagine how loud they would be in the mornings. Like a rooster but worse somehow.</p>
+{% endblock content %}

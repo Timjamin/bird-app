@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bird app</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='styles/styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
 </head>
 <body>
     <h1>bird app</h1>
-
-    {% block content %}
-    {% endblock content %}
+    <hr>
+    <content>
+        {% block content %}
+        {% endblock content %}
+    </content>
+    <hr>
     <div class="navigation">
         <a href="{{url_for('home')}}"><p>Home</p></a>
         <a href="{{url_for('seasonPage')}}"><p>seasons</p></a>
-        <a href="{{url_for('birdPage')}}"><p></p></a>
+        <a href="{{url_for('birdPage')}}"><p>Birds</p></a>
+        <a href="{{url_for('birdTypesPage')}}"><p>Bird types</p></a>
+        <a href="{{url_for('notBirdsPage')}}"><p>Not birds</p></a>
+        <a href="{{url_for('randomBirdPage')}}"><p>Random bird</p></a>
     </div>
 </body>
 </html>

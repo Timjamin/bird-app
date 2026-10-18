@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ bird.name }}</h2>
+    <p>{{ bird.fact }}</p>
+    <a href="{{ url_for('randomBirdPage') }}">Pick another bird</a>
+{% endblock content %}
