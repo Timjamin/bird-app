@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2 class="success">profile saved</h2>
+
+    <div>
+        <h3>Your profile info:</h3>
+        <p>Name: {{name}}</p>
+        <p>Email: {{email}}</p>
+        <p>Total guests: {{quan}}</p>
+        <p>Comments or Issues: {{ comments if comments else "Not Provided" }}</p>
+        <p>Relationship to me: {{rel}} </p>
+        <p>Accomodations required: {{ "Yes" if accomodations else "No" }}</p>
+    </div>
+
+{% endblock content %}

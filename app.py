@@ -1,8 +1,10 @@
 from random import choice
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from datetime import datetime
 
 app = Flask(__name__)
+
+app.secret_key = '********'
 
 birds = [
     {"name": "Sparrow", "fact": "Sparrows are small birds that often live near people."},
@@ -52,3 +54,21 @@ def seasonPage():
     current_year = datetime.now().year
 
     return render_template("seasons.html", month=current_month, year=current_year)
+
+@app.route("/profile", methods=["GET", "POST"])
+def profilePage():
+    if request.method == 'POST':
+        name = request.form.get('name', '').strip()
+        email = request.form.get('email', '').strip()
+        quan = request.form.get('quan', '').strip()
+        comments = request.form.get('comments', '').strip()
+        rel = request.form.get('rel', '').strip()
+        accomodations = request.form.get('accomodations') == 'yes'
+
+        if not name or not email or not quan or not rel:
+            error = 'you did NOT fill out everything, are you STUPID?'
+            return render_template('profileForm.html', error=error)
+
+        return render_template('profileSuccess.html', name=name, email=email, quan=quan, rel=rel, comments=comments, accomodations=accomodations)
+
+    return render_template('profileForm.html')
