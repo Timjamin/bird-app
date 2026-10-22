@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+
+{%block content%}
+
+<h2 class="success">feedback receieved!</h2>
+
+<p>Rating: {{rating}}</p>
+<p>Your feedback {{ feedback if feedback else "no feedback provided"}}</p>
+
+{%endblock content%}
